@@ -1,0 +1,129 @@
+.god-animation{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    filter: blur(1px) grayscale(0.2) saturate(1.2) sepia(0.2);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 5s;
+}
+
+
+.god-animation #foglayer_01, .god-animation #foglayer_02, .god-animation #foglayer_03 {
+    height: 100%;
+    position: absolute;
+    width: 200%;
+  }
+.god-animation #foglayer_01 .image01, .god-animation #foglayer_01 .image02,
+.god-animation #foglayer_02 .image01, .god-animation #foglayer_02 .image02,
+.god-animation #foglayer_03 .image01, .god-animation #foglayer_03 .image02 {
+float: left;
+height: 100%;
+width: 100%;
+}
+.god-animation #foglayer_01 {
+animation: foglayer_01_opacity 30s linear infinite, foglayer_moveme_01 46s linear infinite;
+}
+.god-animation #foglayer_02 {
+animation: foglayer_02_opacity 33s linear infinite, foglayer_moveme_02 40s linear infinite;
+}
+.god-animation #foglayer_03{
+animation: foglayer_02_opacity 39s linear infinite, foglayer_moveme_03 47s linear infinite;
+}
+
+/* ---------- Moving Fog ---------- */
+/*
+'size: cover' || 'size: 100%'; results remain the same
+'attachment: scroll' can be added or removed; results remain the same
+'attachment: fixed' causing unexpected results in Chrome
+'repeat-x' || 'no-repeat'; results remain the same
+*/ 
+.god-animation #foglayer_01 .image01, .god-animation #foglayer_01 .image02 {
+background: url("http://www.sclance.com/pngs/fog-png/fog_png_520472.png") center center/cover no-repeat transparent;
+}
+.god-animation #foglayer_02 .image01, .god-animation #foglayer_02 .image02,
+.god-animation #foglayer_03 .image01, .god-animation #foglayer_03 .image02{
+background: url("http://www.sclance.com/pngs/fog-png/fog_png_520472.png") center center/cover no-repeat transparent;
+}
+
+/* ---------- Keyframe Layer 1 ---------- */
+
+@keyframes foglayer_01_opacity {
+0% { opacity: .0; }
+10% { opacity: .3; }
+25% { opacity: .63; }
+38% { opacity: .88; }
+90% { opacity: .8; }
+100% { opacity: .1; }
+}
+/* ---------- Keyframe Layer 2 ---------- */
+
+@keyframes foglayer_02_opacity {
+0% { opacity: .0; }
+11% { opacity: .3; }
+23% { opacity: .6; }
+32% { opacity: .8}
+92% { opacity: .85; }
+100% { opacity: .1; }
+}
+/* ---------- Keyframe Layer 3 ---------- */
+
+@keyframes foglayer_03_opacity {
+0% { opacity: .0; }
+10% { opacity: .33; }
+21% { opacity: .6; }
+39% { opacity: .8; }
+95% {opacity: .85}
+100% { opacity: .1; }
+}
+/* ---------- Keyframe moveMe ---------- */
+
+@keyframes foglayer_moveme_01 {
+0% { left: 0; }
+100% { left: -100%; }
+}
+
+@keyframes foglayer_moveme_02 {
+0% { left: 0; }
+100% { left: -100%; }
+}
+
+@keyframes foglayer_moveme_03 {
+0% { left: -100%; }
+100% { left: 0; }
+}
+
+@media only screen
+and (min-width: 280px)
+and (max-width: 767px) {
+    .god-animation #foglayer_01 .image01, .god-animation #foglayer_01 .image02,
+    .god-animation #foglayer_02 .image01, .god-animation #foglayer_02 .image02,
+    .god-animation #foglayer_03 .image01, .god-animation #foglayer_03 .image02 {
+    width: 100%;
+    }
+}
+
+.o0{
+    opacity: 0;
+}
+
+.o1{
+    opacity: 1;
+}
+
+.bring-front-answer{
+    z-index: 2000;   
+    transition: all 5s;
+}
+    
+.answer-glow{
+    box-shadow: 0px 0px 149px 177px rgba(18,163,199,1);
+    opacity: 1;
+}
+
+.shadow-remove {
+    box-shadow: 0px 0px 0px 0px rgba(18,103,199,1);
+}
+
+
