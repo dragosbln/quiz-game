@@ -92,3 +92,11 @@ const dotsDiv = document.createElement('div');
     span.classList.add('dot');
     dotsDiv.append(span);
 });
+
+const congradulations = [
+    'YPPIIEE YA YOOO!',
+    'FANTASMAGHORIC!',
+    'EXTRACEPTIONAL!',
+    'BRILLIAMAZING!',
+    'INCREDIFUL!',
+]

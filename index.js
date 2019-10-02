@@ -22,7 +22,9 @@ const questionsContainerContent = document.querySelector('.question-content'),
     subtitle = document.querySelector('.original'),
     headerContainer = document.querySelector('.hero'),
     title = document.querySelector('.title'),
-    mainContainer = document.querySelector('.main');
+    mainContainer = document.querySelector('.main'),
+    gameOverPrizeContainer = document.querySelector('.game-over-prize'),
+    gameWon = document.querySelector('.game-won');
 
 
 const game = {
@@ -86,6 +88,7 @@ const checkAnswer = () => {
 }
 
 const congradulate = () => {
+    questionCongradulation.innerHTML = congradulations[Math.floor(Math.random()*5)]
     questionsContainerContent.style.opacity = 0;
     questionCongradulation.style.display = 'inherit';
     questionCongradulation.style.opacity = 1;
@@ -176,13 +179,19 @@ const loadListeners = () => {
     submitElem.addEventListener('click', async () => {
         if (game.selectedAnswer === null) return;
         if (checkAnswer()) {
-            nextQuestion();
-            congradulate();
+            if(game.round + 1 < game.questions.length){
+                nextQuestion();
+                congradulate();
+            } else {
+                gameWon.style.display = 'flex';
+                await new Promise(res => setTimeout(res,100));
+                gameWon.style.opacity = 1;
+            }
+            
         } else {
-            console.log('INCORRECTO :(');
+            gameOverPrizeContainer.innerHTML = game.round - 1 >= 0 ? `(but you did win $${game.questions[game.round - 1].prize}KDJ, though. Go grab a beer)` : "(and you didn't win shiiit!)"
             gameOver.style.display = 'flex';
             await new Promise(res => setTimeout(res,100));
-
             gameOver.style.opacity = 1;
         }
     })
