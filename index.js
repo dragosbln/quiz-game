@@ -18,7 +18,11 @@ const questionsContainerContent = document.querySelector('.question-content'),
     btnExtraChill = document.querySelector('.btn-extra-chill'),
     btnGame = document.querySelector('.game-btn'),
     gameContainer = document.querySelector('.game-container'),
-    gameOver = document.querySelector('.game-over');
+    gameOver = document.querySelector('.game-over'),
+    subtitle = document.querySelector('.original'),
+    headerContainer = document.querySelector('.hero'),
+    title = document.querySelector('.title'),
+    mainContainer = document.querySelector('.main');
 
 
 const game = {
@@ -261,4 +265,14 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple')
         loadListeners();
     })
 
+console.log('CNAFG', subtitle);
 
+
+
+subtitle.addEventListener('animationend', () => {
+    headerContainer.style.marginTop = '5%'
+    subtitle.style.fontSize = '1rem'
+    title.style.fontSize = '2.2rem'
+    mainContainer.style.opacity = 1
+    
+})

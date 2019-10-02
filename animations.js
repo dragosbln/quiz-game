@@ -1,6 +1,6 @@
 (function(){
 //animate title
-const title = document.querySelector('#title');
+const title = document.querySelector('.title');
 
 for(let i = 0; i < title.children.length; i++){
     title.children[i].style.animationDelay = 0.3*i+'s';
