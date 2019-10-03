@@ -40,11 +40,11 @@ animation: foglayer_02_opacity 39s linear infinite, foglayer_moveme_03 47s linea
 'repeat-x' || 'no-repeat'; results remain the same
 */ 
 .god-animation #foglayer_01 .image01, .god-animation #foglayer_01 .image02 {
-background: url("http://www.sclance.com/pngs/fog-png/fog_png_520472.png") center center/cover no-repeat transparent;
+background: url("assets/fog1.png") center center/cover no-repeat transparent;
 }
 .god-animation #foglayer_02 .image01, .god-animation #foglayer_02 .image02,
 .god-animation #foglayer_03 .image01, .god-animation #foglayer_03 .image02{
-background: url("http://www.sclance.com/pngs/fog-png/fog_png_520472.png") center center/cover no-repeat transparent;
+background: url("assets/fog2.PNG") center center/cover no-repeat transparent;
 }
 
 /* ---------- Keyframe Layer 1 ---------- */
