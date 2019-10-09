@@ -89,7 +89,7 @@ body{
 
 .main{
     width: 60%;
-    height: 50vh;
+    min-height: 50vh;
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
@@ -511,7 +511,8 @@ iframe{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1%;
+    /* padding: 1%; */
+    padding: 0;
 }
 
 .game-cell-row{
